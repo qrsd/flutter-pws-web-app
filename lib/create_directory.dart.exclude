@@ -1,0 +1,19 @@
+import 'dart:convert';
+import 'dart:io';
+
+void main() {
+  Map<String, dynamic> toJson(String path, String project, String fileName) {
+    return {'path': path, 'project': project, 'fileName': fileName};
+  }
+
+  final imagePath = Directory('web/assets/images/projects/');
+  List jsonList = List();
+  for (FileSystemEntity entity
+      in imagePath.listSync(recursive: true, followLinks: false)) {
+    jsonList.add(toJson(entity.uri.path.substring(11),
+        entity.uri.pathSegments[4], entity.uri.pathSegments[5] ?? 0));
+  }
+  File file = File('web/assets/imageManifest.json');
+  file.createSync();
+  file.writeAsStringSync(jsonEncode(jsonList));
+}
