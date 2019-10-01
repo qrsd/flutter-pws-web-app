@@ -4,8 +4,6 @@
 
 coded September 2019
 
-A fully functional flutter web app.
+A fully functional and responsive flutter web app.
 
 - [Live site](https://pws-construction.firebaseapp.com/#/)
-
-TODO: Responsive Layout
