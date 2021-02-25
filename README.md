@@ -1,4 +1,4 @@
-# Flutter Web App
+# flutter-pws-web-app
 
 ## About
 
